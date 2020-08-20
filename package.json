@@ -1,0 +1,34 @@
+{
+  "name": "strapi-provider-upload-minio",
+  "version": "3.0.0",
+  "description": "Minio Server upload file provider for Strapi.",
+  "strapi": {
+    "isProvider": true
+  },
+  "author": "Igor Suvorov <hi@isuvorov.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "https://github.com/isuvorov/strapi-provider-upload-minio",
+  "keywords": [
+    "Strapi",
+    "upload",
+    "provider",
+    "minio"
+  ],
+  "homepage": "https://isuvorov.com/github/strapi-provider-upload-minio",
+  "main": "./lib",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "minio": "^7.0.1"
+  },
+  "bugs": {
+    "url": "https://github.com/isuvorov/strapi-upload-minio/issues"
+  }
+}

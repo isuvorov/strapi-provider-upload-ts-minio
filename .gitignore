@@ -1,0 +1,7 @@
+.cache
+.idea
+.vscode
+.ssh
+lerna-debug.log
+coverage
+**/node_modules
