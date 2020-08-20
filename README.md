@@ -5,13 +5,13 @@
 
 ## Installation and basic usage
 
-```npm i strapi-provider-upload-minio```
+```npm i strapi-provider-upload-iminio```
 
 Add in `config/plugins.js` something like this:
 ```js
 ...
   upload: {
-    provider: 'minio',
+    provider: 'iminio',
     providerOptions: {
       internalEndpoint: env('MINIO_INTERNAL_ENDPOINT'),
       externalEndpoint: env('MINIO_EXTERNAL_ENDPOINT'),

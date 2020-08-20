@@ -1,5 +1,5 @@
 {
-  "name": "strapi-provider-upload-minio",
+  "name": "strapi-provider-upload-iminio",
   "version": "3.0.0",
   "description": "Minio Server upload file provider for Strapi.",
   "strapi": {
