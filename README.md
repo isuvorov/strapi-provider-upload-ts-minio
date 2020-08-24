@@ -1,43 +1,64 @@
-# strapi-provider-upload-minio
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
-> Minio Server upload file provider for Strapi.
+# strapi-provider-upload-ts-minio
 
+This upload provider for [Strapi](https://github.com/strapi/strapi) uses the [JavaScript Minio.Client](https://docs.min.io/docs/javascript-client-api-reference.html) to upload files to a (self hosted) instance of [Minio](https://min.io/).
+
+It's compatible with the the strapi 3.1.1.
 
 ## Installation and basic usage
 
-```npm i strapi-provider-upload-iminio```
+```npm i strapi-provider-upload-ts-minio```
 
 Add in `config/plugins.js` something like this:
+
+Minimal config
 ```js
-...
+// File: ./config/plugins.js
+
+module.exports = ({ env }) => ({
   upload: {
-    provider: 'iminio',
+    provider: 'ts-minio',
     providerOptions: {
-      internalEndpoint: env('MINIO_INTERNAL_ENDPOINT'),
-      externalEndpoint: env('MINIO_EXTERNAL_ENDPOINT'),
-      endpoint: env('MINIO_ENDPOINT'),
       accessKey: env('MINIO_ACCESS_KEY'),
       secretKey: env('MINIO_SECRET_KEY'),
       bucket: env('MINIO_BUCKET'),
+      endPoint: env('MINIO_ENDPOINT'),
     },
   },
-...
+});
 ```
 
-from the providers list select **Minio Server**
+Advanced config
+```js
+// File: ./config/plugins.js
 
-Fill in env:
+module.exports = ({ env }) => ({
+  upload: {
+    provider: 'ts-minio',
+    providerOptions: {
+      accessKey: env('MINIO_ACCESS_KEY'),
+      secretKey: env('MINIO_SECRET_KEY'),
+      bucket: env('MINIO_BUCKET'),
+      internalEnpoint: env('MINIO_INTERNAL_ENDPOINT'), 
+      externalEnpoint: env('MINIO_EXTERNAL_ENDPOINT'), 
+      port: parseInt(env('MINIO_PORT'), 10) || 9000,
+    },
+  },
+});
+```
+
+
+Run Strapi with env:
   - access key (ex: username)
   - secret key (ex: Q.ixuW@JGV!*ENWH9Ut62B!3)
   - internalEndpoint (ex: https://play.minio.io:1234)
   - externalEndpoint (ex: https://cdn.minio.io)
   - bucket (*must exist on your minio server* ex: bucketname)
 
-NOTE: bucket policy must be set to allow your file to be readable. (just set it to: prefix \*, readonly)
 
-
-Run 
-```
+Run Strapi with env:
+```bash
 MINIO_INTERNAL_ENDPOINT=https://play.minio.io:1234 \
 MINIO_EXTERNAL_ENDPOINT=https://cdn.minio.io \
 MINIO_ACCESS_KEY=username \
@@ -46,19 +67,44 @@ MINIO_BUCKET=bucketname \
   npm run start
 ```
 
-## Resources
+
+From the providers list select **Minio Server**
+
+NOTE: bucket policy must be set to allow your file to be readable. (just set it to: prefix \*, readonly)
+
+## Config
+
+There are only a couple of settings one has to provide to make it work.
+The following config settings are available:
+
+| Config Label        | Internal Name | Value                                         |
+| ------------------- | ------------- | --------------------------------------------- |
+| Access API Token    | accessKey     | string                                        |
+| Secret Access Token | secretKey     | string                                        |
+| Bucket              | bucket        | string                                        |
+| Endpoint            | endPoint/endpoint      | string                                        |
+| Internal Endpoint            | internalEndpoint      | string                                        |
+| External Endpoint            | externalEndpoint      | string                                        |
+| Port                | port          | string                                        |
+| SSL                 | useSSL        | string(true for ssl, anything else for false) |
+| Folder              | folder        | string                                        |
+
+## Thanks for examples
+- [strapi-provider-upload-tp-minio](https://github.com/talentplatforms/strapi-provider-upload-tp-minio)
+- [itechops/strapi-provider-upload-minio](https://github.com/itechops/strapi-provider-upload-minio)
+- [kyuumeitai/strapi-provider-upload-minio](https://github.com/kyuumeitai/strapi-provider-upload-minio)
 
 ## Links
-
 - [Strapi website](http://strapi.io/)
 - [Strapi community on Slack](http://slack.strapi.io)
 - [Strapi news on Twitter](https://twitter.com/strapijs)
 
-
-
-## White to me and I help you
+## Write me and I help you if you have a problems
 - [Email](mailto:hi@isuvorov.com)
 - [Telegram chat](https://t.me/lskjs)
+
+## Sponsorship
+- Thanks [TrafficStars](https://github.com/trafficstars)
 
 ## Contributors ✨
 

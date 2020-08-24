@@ -1,6 +1,6 @@
 {
-  "name": "strapi-provider-upload-iminio",
-  "version": "3.0.0",
+  "name": "strapi-provider-upload-ts-minio",
+  "version": "3.1.0",
   "description": "Minio Server upload file provider for Strapi.",
   "strapi": {
     "isProvider": true
@@ -10,14 +10,14 @@
   "publishConfig": {
     "access": "public"
   },
-  "repository": "https://github.com/isuvorov/strapi-provider-upload-minio",
+  "repository": "https://github.com/isuvorov/strapi-provider-upload-ts-minio",
   "keywords": [
     "Strapi",
     "upload",
     "provider",
     "minio"
   ],
-  "homepage": "https://isuvorov.com/github/strapi-provider-upload-minio",
+  "homepage": "https://isuvorov.com/github/strapi-provider-upload-ts-minio",
   "main": "./lib",
   "directories": {
     "lib": "lib"
@@ -29,6 +29,6 @@
     "minio": "^7.0.1"
   },
   "bugs": {
-    "url": "https://github.com/isuvorov/strapi-upload-minio/issues"
+    "url": "https://github.com/isuvorov/strapi-upload-ts-minio/issues"
   }
 }
