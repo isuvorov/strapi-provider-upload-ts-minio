@@ -74,8 +74,7 @@ NOTE: bucket policy must be set to allow your file to be readable. (just set it 
 
 ## Config
 
-There are only a couple of settings one has to provide to make it work.
-The following config settings are available:
+There is only a couple of settings need to be provided to make it work. The following config settings are available:
 
 | Config Label        | Internal Name | Value                                         |
 | ------------------- | ------------- | --------------------------------------------- |
