@@ -99,7 +99,7 @@ The following config settings are available:
 - [Strapi community on Slack](http://slack.strapi.io)
 - [Strapi news on Twitter](https://twitter.com/strapijs)
 
-## Write me and I help you if you have a problems
+## Write me and I help you if you have any problems
 - [Email](mailto:hi@isuvorov.com)
 - [Telegram chat](https://t.me/lskjs)
 
